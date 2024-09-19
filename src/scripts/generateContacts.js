@@ -1,10 +1,10 @@
 import { writeContacts } from "../utils/writeContacts.js";
 import { createFakeContact } from "../utils/createFakeContact.js";
-import { getAllContacts } from "../scripts/getAllContacts.js";
+import { readContacts } from "../utils/readContacts.js";
 
 
 const generateContacts = async (number) => {
-    const contactsList = await getAllContacts();
+    const contactsList = await readContacts();
     const newContactsList = Array(number).fill(0).map(createFakeContact);
     contactsList.push(...newContactsList);
     await writeContacts(contactsList);
