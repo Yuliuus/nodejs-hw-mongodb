@@ -1,7 +1,7 @@
-import updateContacts from "./updateContacts.js";
+import { writeContacts } from "../utils/writeContacts.js";
 
 export const removeAllContacts = async () => {
-    await updateContacts([]);
+    await writeContacts([]);
 };
 
 removeAllContacts();
