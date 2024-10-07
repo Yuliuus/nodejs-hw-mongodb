@@ -24,7 +24,7 @@ export const getContacts = async ({
     };
 };
 
-export const getContactById = id => ContactsCollection.findById(id);
+export const getContact = filter => ContactsCollection.findById(filter);
 
 export const createContact = payload => ContactsCollection.create(payload);
 
