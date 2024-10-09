@@ -39,6 +39,7 @@ export const signup = async (payload) => {
 export const signin = async (payload) => {
     const { email, password } = payload;
     const user = await UserCollection.findOne({ email });
+
     if (!user) {
         throw createHttpError(401);
     }
@@ -80,7 +81,7 @@ export const refreshSession = async ({ refreshToken, sessionId }) => {
     const sessionData = createSession();
 
     const userSession = await SessionCollection.create({
-        userId: oldSession._id,
+        userId: oldSession.userId,
         ...sessionData,
     });
 
