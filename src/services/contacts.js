@@ -30,6 +30,7 @@ export const getContact = filter => ContactsCollection.findOne(filter);
 export const createContact = payload => ContactsCollection.create(payload);
 
 export const updateContact = async (filter, data, options = {}) => {
+    console.log("Received update request for contact");
     const rawData = await ContactsCollection.findOneAndUpdate(filter, data, {
         includeResultMetadata: true,
     });

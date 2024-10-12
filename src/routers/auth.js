@@ -32,7 +32,7 @@ authRouter.post("/logout", ctrlWrapper(signoutController));
 
 authRouter.post("/request-reset-email", validateBody(requestResetEmailSchema), ctrlWrapper(requestResetEmailController));
 
-authRouter.post("/reset-password", validateBody(resetPasswordSchema), ctrlWrapper(resetPasswordController));
+authRouter.post("/reset-pwd", validateBody(resetPasswordSchema), ctrlWrapper(resetPasswordController));
 
 
 
