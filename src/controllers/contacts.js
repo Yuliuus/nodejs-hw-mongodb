@@ -68,6 +68,7 @@ export const addContactController = async (req, res) => {
 
 export const updateContactController = async (req, res, next) => {
     const photo = req.file;
+    console.log(photo);
     let photoURL;
 
     try {
@@ -80,18 +81,14 @@ export const updateContactController = async (req, res, next) => {
         return res.status(500).json({ message: "Error saving photo", error: error.message });
     }
 
-
     const { _id: userId } = req.user;
     const { contactId } = req.params;
-    const data = await contactServices.updateContact({ _id: contactId, userId, photo: photoURL }, req.body,);
+    const data = await contactServices.updateContact({ _id: contactId, userId },
+        { ...req.body, photo: photoURL });
 
     if (!data) {
         throw createHttpError(404, 'Contact not found');
     };
-
-    console.log(data.contact);
-
-
 
     res.json({
         status: 200,
