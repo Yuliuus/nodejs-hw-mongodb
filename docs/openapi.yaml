@@ -15,7 +15,7 @@ tags:
 
 servers:
   - url: http://localhost:3000
-  - url: https://hw2-mongodb-contacts-app.onrender.com/contacts
+  - url: https://nodejs-hw-mongodb-hw7-frf2.onrender.com/contacts
 paths:
   # тут будуть посилання на ендпоінти
   /contacts:
